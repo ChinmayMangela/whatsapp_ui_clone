@@ -8,7 +8,10 @@ class CustomFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       backgroundColor: Colors.green,
       onPressed: () {},
-      child: const Icon(Icons.add_comment_rounded),
+      child: const Icon(
+        Icons.add_comment_rounded,
+        color: Colors.black,
+      ),
     );
   }
 }
