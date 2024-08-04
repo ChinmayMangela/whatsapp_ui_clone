@@ -17,3 +17,14 @@ Widget buildMoreIconButton() {
 
   }, icon: const Icon(Icons.more_vert), color: Colors.white,);
 }
+
+Widget buildVideoCallButton() {
+  return IconButton(onPressed: () {
+  }, icon: const Icon(Icons.video_call), color: Colors.white,);
+}
+
+Widget buildPhoneCallButton() {
+  return IconButton(onPressed: () {
+  }, icon: const Icon(Icons.phone_outlined), color: Colors.white,);
+}
+

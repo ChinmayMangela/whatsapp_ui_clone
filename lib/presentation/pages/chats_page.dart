@@ -14,7 +14,9 @@ class ChatsPage extends StatelessWidget {
     return Scaffold(
       appBar: buildMobileAppBar(selectedIndex),
       body: _buildBody(),
-      floatingActionButton: const CustomFloatingActionButton(),
+      floatingActionButton: const CustomFloatingActionButton(
+        icon: Icons.add_comment_rounded,
+      ),
     );
   }
 

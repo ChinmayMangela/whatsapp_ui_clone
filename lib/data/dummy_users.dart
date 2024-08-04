@@ -1,7 +1,7 @@
 
 import 'package:whatsapp_ui_clone/domain/models/user.dart';
 
-List<User> dummyUsers = const [
+List<User> dummyUsers = [
   User(
     name: 'Chinmay',
     message: 'Hey, how are you doing?',
@@ -9,13 +9,13 @@ List<User> dummyUsers = const [
     profilePic: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Elon_Musk_Royal_Society_%28crop1%29.jpg',
   ),
   User(
-    name: 'Monty',
+    name: 'john doe',
     message: 'Hello, whats up',
     time: '2:25 pm',
     profilePic: 'https://www.socialketchup.in/wp-content/uploads/2020/05/fi-vill-JOHN-DOE.jpg',
   ),
   User(
-    name: 'Roger Federer',
+    name: 'Monty',
     message: 'Hello, I want to sleep.',
     time: '1:03 pm',
     profilePic: 'https://media.cntraveler.com/photos/60596b398f4452dac88c59f8/16:9/w_3999,h_2249,c_limit/MtFuji-GettyImages-959111140.jpg',

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui_clone/constants/constants.dart';
 import 'package:whatsapp_ui_clone/presentation/widgets/app_bar_icons.dart';
 import 'package:whatsapp_ui_clone/presentation/widgets/custom_text.dart';
 
 AppBar buildMobileAppBar(int selectedIndex) {
   return AppBar(
-    backgroundColor: backgroundColor,
     title: CustomText(text: getAppBarName(selectedIndex), textSize: 25, isBoldFont: false,),
     actions: getActions(selectedIndex),
   );
