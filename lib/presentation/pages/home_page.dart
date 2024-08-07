@@ -13,9 +13,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _pageController = PageController(initialPage: 0);
   var selectedIndex = 0;
 
-  void _changePage(int newIndex) {
+  void _onPageChanged(int newIndex) {
     setState(() {
       selectedIndex = newIndex;
     });
@@ -31,24 +32,26 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildPage() {
-    switch (selectedIndex) {
-      case 0:
-        return ChatsPage(selectedIndex: selectedIndex);
-      case 1:
-        return UpdatesPage(selectedIndex: selectedIndex);
-      case 2:
-        return CommunitiesPage(selectedIndex: selectedIndex);
-      case 3:
-        return CallsPage(selectedIndex: selectedIndex);
-      default:
-        return ChatsPage(selectedIndex: selectedIndex);
-    }
+    return PageView(
+      controller: _pageController,
+      onPageChanged: _onPageChanged,
+      children: [
+        ChatsPage(selectedIndex: selectedIndex),
+        UpdatesPage(selectedIndex: selectedIndex),
+        CommunitiesPage(selectedIndex: selectedIndex),
+        CallsPage(selectedIndex: selectedIndex),
+      ],
+    );
   }
 
   BottomNavigationBar _buildBottomNavigationBar() {
     return BottomNavigationBar(
       backgroundColor: backgroundColor,
-      onTap: _changePage,
+      onTap: (newIndex) {
+        _pageController.animateToPage(
+          newIndex, duration: const Duration(milliseconds: 5),
+          curve: Curves.easeIn,);
+      },
       currentIndex: selectedIndex,
       unselectedItemColor: Colors.white,
       selectedItemColor: Colors.green.shade100,

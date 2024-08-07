@@ -9,8 +9,8 @@ List<User> dummyUsers = [
     profilePic: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Elon_Musk_Royal_Society_%28crop1%29.jpg',
   ),
   User(
-    name: 'john doe',
-    message: 'Hello, whats up',
+    name: 'John doe',
+    message: 'Hello, whats up bro ??',
     time: '2:25 pm',
     profilePic: 'https://www.socialketchup.in/wp-content/uploads/2020/05/fi-vill-JOHN-DOE.jpg',
   ),

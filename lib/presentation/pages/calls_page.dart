@@ -35,7 +35,7 @@ class CallsPage extends StatelessWidget {
           const SizedBox(height: 20),
           _buildTextWithPadding('Recent'),
           const SizedBox(height: 12),
-          const Expanded(child: CallsList())
+          const Expanded(child: CallsList()), // Replace Expanded with SizedBox
         ],
       ),
     );
@@ -47,9 +47,7 @@ class CallsPage extends StatelessWidget {
       child: Row(
         children: [
           _buildFavoriteButton(),
-          const SizedBox(
-            width: 10,
-          ),
+          const SizedBox(width: 10),
           const CustomText(
             text: 'Add to Favorites',
             textSize: 14,

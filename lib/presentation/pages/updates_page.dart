@@ -24,15 +24,17 @@ class UpdatesPage extends StatelessWidget {
   Widget _buildBody() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const CustomText(text: 'Status', textSize: 20, isBoldFont: true),
-          const SizedBox(height: 10),
-          const SizedBox(height: 120, child: StatusList()),
-          const Divider(),
-          _buildChannelsComponent(),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CustomText(text: 'Status', textSize: 20, isBoldFont: true),
+            const SizedBox(height: 10),
+            const SizedBox(height: 120, child: StatusList()),
+            const Divider(),
+            _buildChannelsComponent(),
+          ],
+        ),
       ),
     );
   }
