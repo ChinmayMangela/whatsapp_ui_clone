@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui_clone/presentation/pages/home_page.dart';
+import 'package:whatsapp_ui_clone/presentation/pages/tabs.dart';
 import 'package:whatsapp_ui_clone/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
-      home: const HomePage(),
+      home: const Tabs(),
     );
   }
 }

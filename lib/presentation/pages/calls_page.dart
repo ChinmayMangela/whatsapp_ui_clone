@@ -15,7 +15,7 @@ class CallsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildMobileAppBar(selectedIndex),
+      appBar: buildMobileAppBar(selectedIndex, context),
       body: _buildBody(),
       floatingActionButton: const CustomFloatingActionButton(
         icon: Icons.add_ic_call_sharp,
@@ -24,19 +24,21 @@ class CallsPage extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildTextWithPadding('Favorites'),
-          const SizedBox(height: 20),
-          _buildAddFavoriteComponent(),
-          const SizedBox(height: 20),
-          _buildTextWithPadding('Recent'),
-          const SizedBox(height: 12),
-          const Expanded(child: CallsList()), // Replace Expanded with SizedBox
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildTextWithPadding('Favorites'),
+            const SizedBox(height: 20),
+            _buildAddFavoriteComponent(),
+            const SizedBox(height: 20),
+            _buildTextWithPadding('Recent'),
+            const SizedBox(height: 12),
+            CallsList(), // Replace Expanded with SizedBox
+          ],
+        ),
       ),
     );
   }

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_ui_clone/presentation/widgets/app_bar_icons.dart';
 import 'package:whatsapp_ui_clone/presentation/widgets/custom_text.dart';
 
-AppBar buildMobileAppBar(int selectedIndex) {
+AppBar buildMobileAppBar(int selectedIndex, BuildContext context) {
   return AppBar(
     title: CustomText(text: getAppBarName(selectedIndex), textSize: 25, isBoldFont: false,),
-    actions: getActions(selectedIndex),
+    actions: getActions(selectedIndex, context),
   );
 }
 
@@ -22,19 +22,19 @@ String getAppBarName(int selectedIndex) {
   }
 }
 
-List<Widget> getActions(int selectedIndex) {
+List<Widget> getActions(int selectedIndex, BuildContext context) {
   if(selectedIndex == 0 || selectedIndex == 2) {
     return [
       buildQRCodeIconButton(),
       buildCameraIconButton(),
-      buildMoreIconButton(),
+      buildMoreIconButton(context),
     ];
   } else {
     return [
       buildQRCodeIconButton(),
       buildCameraIconButton(),
       buildSearchIconButton(),
-      buildMoreIconButton(),
+      buildMoreIconButton(context),
     ];
   }
 }

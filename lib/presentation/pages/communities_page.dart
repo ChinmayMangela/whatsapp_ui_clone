@@ -9,7 +9,7 @@ class CommunitiesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildMobileAppBar(selectedIndex),
+      appBar: buildMobileAppBar(selectedIndex, context),
     );
   }
 }

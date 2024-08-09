@@ -16,7 +16,7 @@ class UpdatesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildMobileAppBar(selectedIndex),
+      appBar: buildMobileAppBar(selectedIndex, context),
       body: _buildBody(),
     );
   }

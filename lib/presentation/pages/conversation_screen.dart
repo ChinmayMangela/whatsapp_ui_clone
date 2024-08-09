@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_ui_clone/domain/models/user.dart';
 import 'package:whatsapp_ui_clone/presentation/pages/specific_user_info_page.dart';
 import 'package:whatsapp_ui_clone/presentation/widgets/app_bar_icons.dart';
+import 'package:whatsapp_ui_clone/presentation/widgets/chats_list.dart';
 import 'package:whatsapp_ui_clone/presentation/widgets/custom_text.dart';
 
 class ConversationScreen extends StatelessWidget {
@@ -17,6 +18,7 @@ class ConversationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: _buildAppBar(context),
+      body: _buildBody(),
     );
   }
 
@@ -33,9 +35,16 @@ class ConversationScreen extends StatelessWidget {
         child: CustomText(text: user.name, textSize: 16, isBoldFont: true),
       ),
       actions: [
-        buildVideoCallButton(),
         buildPhoneCallButton(),
-        buildMoreIconButton(),
+        buildMoreIconButton(context),
+      ],
+    );
+  }
+
+  Widget _buildBody() {
+    return const Stack(
+      children: [
+        Expanded(child: ChatsList()),
       ],
     );
   }

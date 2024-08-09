@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomText extends StatelessWidget {
-  const CustomText({super.key, required this.text, this.textColor, required this.textSize, required this.isBoldFont});
+  const CustomText({super.key, required this.text, this.textColor = Colors.white, required this.textSize, required this.isBoldFont});
 
   final String text;
-  final Color? textColor;
+  final Color textColor;
   final double textSize;
   final bool isBoldFont;
   @override
@@ -13,7 +13,7 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       style: GoogleFonts.lato(
-        color: textColor ?? Colors.white,
+        color: textColor,
         fontSize: textSize,
         fontWeight: isBoldFont ? FontWeight.bold : FontWeight.normal,
       ),

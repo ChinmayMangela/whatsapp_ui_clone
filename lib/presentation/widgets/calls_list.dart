@@ -8,6 +8,8 @@ class CallsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         final currentUser = dummyUsers[index];
         return CallMessageTile(user: currentUser);

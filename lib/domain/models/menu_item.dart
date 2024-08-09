@@ -1,5 +1,5 @@
-
-import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:whatsapp_ui_clone/presentation/pages/settings_page.dart';
 
 enum MenuItemCategory {
   NewGroup,
@@ -12,7 +12,7 @@ enum MenuItemCategory {
 
 class MenuItem {
   final String name;
-  final VoidCallback onTap;
+  final void Function(BuildContext context) onTap;
 
   const MenuItem({
     required this.name,
@@ -23,32 +23,37 @@ class MenuItem {
 final Map<MenuItemCategory, MenuItem> menuItems = {
   MenuItemCategory.NewGroup: MenuItem(
     name: 'New Group',
-    onTap: () {},
+    onTap: (context) {},
   ),
+
   MenuItemCategory.NewPodcast: MenuItem(
     name: 'New Podcast',
-    onTap: () {
-
-    },
+    onTap: (context) {},
   ),
+
   MenuItemCategory.LinkedDevices: MenuItem(
-    name: 'Linked Devices',onTap: () {
-
-  },
+    name: 'Linked Devices',
+    onTap: (context) {},
   ),
+
   MenuItemCategory.StarredMessages: MenuItem(
     name: 'Starred Messages',
-    onTap: () {
-    },
+    onTap: (context) {},
   ),
+
   MenuItemCategory.Payments: MenuItem(
     name: 'Payments',
-    onTap: () {
-    },
+    onTap: (context) {},
   ),
+
   MenuItemCategory.Settings: MenuItem(
     name: 'Settings',
-    onTap: () {
+    onTap: (context) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const SettingsPage(),
+        ),
+      );
     },
   ),
 };
